@@ -112,7 +112,7 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(137, 316);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->PasswordChar = '~';
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(719, 38);
 			this->textBox2->TabIndex = 3;
 			// 
@@ -161,31 +161,28 @@ namespace Project2 {
 		}
 		try
 		{
-			String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=all_info_of_root;Integrated Security=True;Trust Server Certificate=True";
-			SqlConnection SqlConn(connString);
-			SqlConn.Open();
-
-			String^ SqlQuery = "select * from Table where id = @id and password = @psd";
-			SqlCommand command(SqlQuery, % SqlConn);
-			command.Parameters->AddWithValue("@id", id);
-			command.Parameters->AddWithValue("@psd", password);
-
-			SqlDataReader^ reader = command.ExecuteReader();
-			if (reader->Read())
+			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+			SqlConnection con(connectionstring);
+			String^ sqlquery = "select * from root_table where name like '%"+this->textBox1->Text+"%'";
+			SqlCommand cmd(sqlquery, % con);
+			con.Open();
+			SqlDataReader^ dr = cmd.ExecuteReader();
+			if (dr->Read())
 			{
-				this->Close();
-				MyForm4^ obj6 = gcnew MyForm4();
-				obj6->ShowDialog();
-
+				this->Hide();
+				MyForm4^ obj22 = gcnew MyForm4();
+				obj22->ShowDialog();
 			}
 			else
-				MessageBox::Show("your id or password is incorrect", "login faild", MessageBoxButtons::OK);
-		}
-		catch(Exception ^ e)
-		{
-			MessageBox::Show("fail to connetct database ", "database connection error", MessageBoxButtons::OK);
-		
+			{
+				dr->Close();
+				MessageBox::Show("you don't have account please register", "success", MessageBoxButtons::OK);
+			}
 
+		}
+		catch (Exception^ ex)
+		{
+			throw ex;
 		}
 
 

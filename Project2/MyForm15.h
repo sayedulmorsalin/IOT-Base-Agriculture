@@ -225,6 +225,7 @@ namespace Project2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(908, 541);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);

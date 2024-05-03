@@ -186,9 +186,41 @@ namespace Project2 {
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	MyForm2^ obj5 = gcnew MyForm2();
-	obj5->ShowDialog();
+	String^ id = this->textBox1->Text;
+	String^ password = this->textBox2->Text;
+	String^ password2 = this->textBox3->Text;
+
+	if (id->Length == 0 || password->Length == 0)
+	{
+		MessageBox::Show("id or password is empty", "error box", MessageBoxButtons::OK);
+		return;
+	}
+	else if (password != password2)
+	{
+		MessageBox::Show("Please enter same password", "error box", MessageBoxButtons::OK);
+		return;
+	}
+
+
+	
+		try
+		{
+			String^ connectionstring = "Data Source=localhost\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+			SqlConnection con(connectionstring);
+			con.Open();
+			String^ sqlquery = "insert into root_table values('" + this->textBox1 + "','" + this->textBox2 + "')";
+			SqlCommand cmd(sqlquery, % con);
+			cmd.ExecuteNonQuery();
+			//con.Close();
+			MessageBox::Show("Data submited successfully", "success", MessageBoxButtons::OK);
+
+
+		}
+		catch (Exception^ e)
+		{
+			throw e;
+		}
+
 }
 };
 }
