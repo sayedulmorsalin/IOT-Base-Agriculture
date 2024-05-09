@@ -9,6 +9,7 @@ namespace Project2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MyForm12
@@ -86,7 +87,7 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(196, 299);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->PasswordChar = '~';
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(719, 38);
 			this->textBox2->TabIndex = 8;
 			// 
@@ -149,9 +150,40 @@ namespace Project2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		MyForm14^ obj18 = gcnew MyForm14();
-		obj18->ShowDialog();
+		String^ id = this->textBox1->Text;
+		String^ password = this->textBox2->Text;
+
+		if (id->Length == 0 || password->Length == 0)
+		{
+			MessageBox::Show("id or password is empty", "error box", MessageBoxButtons::OK);
+			return;
+		}
+		try
+		{
+			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+			SqlConnection con(connectionstring);
+			String^ sqlquery = "select * from root_table where name like '%" + this->textBox1->Text + "%'";
+			SqlCommand cmd(sqlquery, % con);
+			con.Open();
+			SqlDataReader^ dr = cmd.ExecuteReader();
+			if (dr->Read())
+			{
+				this->Hide();
+				MyForm14^ obj24 = gcnew MyForm14();
+				obj24->ShowDialog();
+			}
+			else
+			{
+				dr->Close();
+				MessageBox::Show("you don't have account please register", "success", MessageBoxButtons::OK);
+			}
+
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Faild to connect to database", "faild", MessageBoxButtons::OK);
+
+		}
 	}
 };
 }

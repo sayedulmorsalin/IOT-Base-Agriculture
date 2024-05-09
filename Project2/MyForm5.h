@@ -43,10 +43,11 @@ namespace Project2 {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 
 	private:
 		/// <summary>
@@ -68,10 +69,9 @@ namespace Project2 {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -89,10 +89,10 @@ namespace Project2 {
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Green;
-			this->button1->Location = System::Drawing::Point(103, 229);
+			this->button1->Location = System::Drawing::Point(103, 243);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(95, 43);
 			this->button1->TabIndex = 1;
@@ -103,10 +103,10 @@ namespace Project2 {
 			// 
 			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Green;
-			this->button2->Location = System::Drawing::Point(388, 229);
+			this->button2->Location = System::Drawing::Point(388, 243);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(95, 43);
 			this->button2->TabIndex = 2;
@@ -117,10 +117,10 @@ namespace Project2 {
 			// 
 			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Green;
-			this->button3->Location = System::Drawing::Point(240, 229);
+			this->button3->Location = System::Drawing::Point(240, 243);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(95, 43);
 			this->button3->TabIndex = 3;
@@ -131,12 +131,12 @@ namespace Project2 {
 			// 
 			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Green;
-			this->button4->Location = System::Drawing::Point(532, 229);
+			this->button4->Location = System::Drawing::Point(540, 243);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(95, 43);
+			this->button4->Size = System::Drawing::Size(118, 43);
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Pepper";
 			this->button4->UseVisualStyleBackColor = false;
@@ -146,7 +146,7 @@ namespace Project2 {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(98, 317);
+			this->label2->Location = System::Drawing::Point(98, 374);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(313, 25);
 			this->label2->TabIndex = 5;
@@ -156,30 +156,10 @@ namespace Project2 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(101, 361);
+			this->textBox1->Location = System::Drawing::Point(103, 420);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(555, 30);
 			this->textBox1->TabIndex = 6;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(96, 413);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(135, 25);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"Price per KG";
-			// 
-			// textBox2
-			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(101, 458);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(553, 30);
-			this->textBox2->TabIndex = 8;
 			// 
 			// label4
 			// 
@@ -202,6 +182,20 @@ namespace Project2 {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm5::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button6->ForeColor = System::Drawing::Color::Green;
+			this->button6->Location = System::Drawing::Point(292, 469);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(151, 41);
+			this->button6->TabIndex = 11;
+			this->button6->Text = L"Sell";
+			this->button6->UseVisualStyleBackColor = false;
+			// 
 			// MyForm5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -209,10 +203,9 @@ namespace Project2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->ClientSize = System::Drawing::Size(744, 534);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button4);

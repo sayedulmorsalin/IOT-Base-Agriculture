@@ -78,9 +78,9 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(270, 365);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(299, 32);
+			this->label6->Size = System::Drawing::Size(310, 32);
 			this->label6->TabIndex = 47;
-			this->label6->Text = L"00.0 kg will available";
+			this->label6->Text = L"00.0 KG will available";
 			// 
 			// label5
 			// 
@@ -89,9 +89,9 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(270, 305);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(299, 32);
+			this->label5->Size = System::Drawing::Size(310, 32);
 			this->label5->TabIndex = 46;
-			this->label5->Text = L"00.0 kg will available";
+			this->label5->Text = L"00.0 KG will available";
 			// 
 			// label4
 			// 
@@ -100,9 +100,9 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(270, 184);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(299, 32);
+			this->label4->Size = System::Drawing::Size(310, 32);
 			this->label4->TabIndex = 45;
-			this->label4->Text = L"00.0 kg will available";
+			this->label4->Text = L"00.0 KG will available";
 			// 
 			// label3
 			// 
@@ -111,9 +111,9 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(270, 247);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(299, 32);
+			this->label3->Size = System::Drawing::Size(310, 32);
 			this->label3->TabIndex = 44;
-			this->label3->Text = L"00.0 kg will available";
+			this->label3->Text = L"00.0 KG will available";
 			// 
 			// button5
 			// 
@@ -184,13 +184,15 @@ namespace Project2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(201, 88);
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->label1->Location = System::Drawing::Point(288, 66);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(184, 32);
+			this->label1->Size = System::Drawing::Size(265, 46);
 			this->label1->TabIndex = 38;
-			this->label1->Text = L"growing now";
+			this->label1->Text = L"Growing now";
 			// 
 			// MyForm17
 			// 

@@ -9,6 +9,7 @@ namespace Project2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MyForm13
@@ -179,9 +180,43 @@ namespace Project2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		MyForm12^ obj17 = gcnew MyForm12();
-		obj17->ShowDialog();
+		String^ id = this->textBox1->Text;
+		String^ password = this->textBox2->Text;
+		String^ password2 = this->textBox3->Text;
+
+		if (id->Length == 0 || password->Length == 0)
+		{
+			MessageBox::Show("id or password is empty", "error box", MessageBoxButtons::OK);
+			return;
+		}
+		else if (password != password2)
+		{
+			MessageBox::Show("Please enter same password", "error box", MessageBoxButtons::OK);
+			return;
+		}
+
+
+
+		try
+		{
+			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+			SqlConnection con(connectionstring);
+			con.Open();
+			String^ sqlquery = "insert into root_table (name,password) values ('" + this->textBox1 + "','" + this->textBox2 + "')";
+			SqlCommand cmd(sqlquery, % con);
+			cmd.ExecuteNonQuery();
+			//con.Close();
+			MessageBox::Show("Your name and password submited successfully", "success", MessageBoxButtons::OK);
+			this->Hide();
+			MyForm12^ obj25 = gcnew MyForm12();
+			obj25->ShowDialog();
+
+
+		}
+		catch (Exception^ e)
+		{
+			throw e;
+		}
 	}
 };
 }

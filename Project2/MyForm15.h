@@ -51,6 +51,7 @@ namespace Project2 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Button^ button6;
 
 	private:
 		/// <summary>
@@ -77,6 +78,7 @@ namespace Project2 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button5
@@ -93,7 +95,7 @@ namespace Project2 {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(103, 480);
+			this->textBox1->Location = System::Drawing::Point(155, 455);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(555, 38);
 			this->textBox1->TabIndex = 17;
@@ -101,11 +103,13 @@ namespace Project2 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(98, 435);
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->label2->Location = System::Drawing::Point(148, 413);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(313, 25);
+			this->label2->Size = System::Drawing::Size(518, 39);
 			this->label2->TabIndex = 16;
 			this->label2->Text = L"Write the quantity of crop in KG";
 			// 
@@ -116,7 +120,7 @@ namespace Project2 {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Green;
-			this->button4->Location = System::Drawing::Point(103, 347);
+			this->button4->Location = System::Drawing::Point(152, 333);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(124, 43);
 			this->button4->TabIndex = 15;
@@ -131,7 +135,7 @@ namespace Project2 {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Green;
-			this->button3->Location = System::Drawing::Point(103, 229);
+			this->button3->Location = System::Drawing::Point(152, 189);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(118, 43);
 			this->button3->TabIndex = 14;
@@ -145,7 +149,7 @@ namespace Project2 {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Green;
-			this->button2->Location = System::Drawing::Point(103, 287);
+			this->button2->Location = System::Drawing::Point(152, 260);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(118, 43);
 			this->button2->TabIndex = 13;
@@ -159,7 +163,7 @@ namespace Project2 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Green;
-			this->button1->Location = System::Drawing::Point(103, 172);
+			this->button1->Location = System::Drawing::Point(152, 123);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(95, 43);
 			this->button1->TabIndex = 12;
@@ -169,20 +173,22 @@ namespace Project2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(185, 76);
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->label1->Location = System::Drawing::Point(207, 31);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(379, 32);
+			this->label1->Size = System::Drawing::Size(459, 39);
 			this->label1->TabIndex = 11;
-			this->label1->Text = L"which crop you want to buy";
+			this->label1->Text = L"Which crop you want to buy";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(254, 235);
+			this->label3->Location = System::Drawing::Point(298, 195);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(246, 32);
 			this->label3->TabIndex = 22;
@@ -193,7 +199,7 @@ namespace Project2 {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(254, 172);
+			this->label4->Location = System::Drawing::Point(288, 129);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(246, 32);
 			this->label4->TabIndex = 23;
@@ -204,7 +210,7 @@ namespace Project2 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(254, 287);
+			this->label5->Location = System::Drawing::Point(298, 266);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(246, 32);
 			this->label5->TabIndex = 24;
@@ -215,18 +221,34 @@ namespace Project2 {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(254, 353);
+			this->label6->Location = System::Drawing::Point(298, 344);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(246, 32);
 			this->label6->TabIndex = 25;
 			this->label6->Text = L"00.0 kg available";
+			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button6->Location = System::Drawing::Point(325, 513);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(182, 43);
+			this->button6->TabIndex = 26;
+			this->button6->Text = L"Buy";
+			this->button6->UseVisualStyleBackColor = false;
 			// 
 			// MyForm15
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(908, 541);
+			this->ClientSize = System::Drawing::Size(908, 582);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);

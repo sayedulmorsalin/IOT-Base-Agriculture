@@ -182,7 +182,8 @@ namespace Project2 {
 		}
 		catch (Exception^ ex)
 		{
-			throw ex;
+			MessageBox::Show("Faild to connect to database", "faild", MessageBoxButtons::OK);
+
 		}
 
 

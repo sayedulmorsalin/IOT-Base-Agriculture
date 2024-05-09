@@ -58,11 +58,14 @@ namespace Project2 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(294, 69);
+			this->label1->ForeColor = System::Drawing::Color::Navy;
+			this->label1->Location = System::Drawing::Point(257, 211);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(320, 32);
+			this->label1->Size = System::Drawing::Size(416, 42);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"The pH of the land is 7";
 			// 
@@ -80,6 +83,8 @@ namespace Project2 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->ClientSize = System::Drawing::Size(918, 503);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
