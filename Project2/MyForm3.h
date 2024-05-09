@@ -205,14 +205,17 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	
 		try
 		{
-			String^ connectionstring = "Data Source=localhost\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
 			SqlConnection con(connectionstring);
 			con.Open();
-			String^ sqlquery = "insert into root_table values('" + this->textBox1 + "','" + this->textBox2 + "')";
+			String^ sqlquery = "insert into root_table (name,password) values ('" + this->textBox1 + "','" + this->textBox2 + "')";
 			SqlCommand cmd(sqlquery, % con);
 			cmd.ExecuteNonQuery();
 			//con.Close();
-			MessageBox::Show("Data submited successfully", "success", MessageBoxButtons::OK);
+			MessageBox::Show("Your name and password submited successfully", "success", MessageBoxButtons::OK);
+			this->Hide();
+			MyForm2^ obj23 = gcnew MyForm2();
+			obj23->ShowDialog();
 
 
 		}
