@@ -133,6 +133,7 @@
     <ClCompile Include="MyForm15.cpp" />
     <ClCompile Include="MyForm16.cpp" />
     <ClCompile Include="MyForm17.cpp" />
+    <ClCompile Include="MyForm18.cpp" />
     <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="MyForm3.cpp" />
     <ClCompile Include="MyForm4.cpp" />
@@ -171,6 +172,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm17.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm18.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm2.h">
@@ -228,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm17.resx">
       <DependentUpon>MyForm17.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm18.resx">
+      <DependentUpon>MyForm18.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm2.resx">
       <DependentUpon>MyForm2.h</DependentUpon>

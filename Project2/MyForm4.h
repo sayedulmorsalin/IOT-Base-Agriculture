@@ -247,7 +247,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	obj12->ShowDialog();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-//
+	String^ websiteUrl = "http://192.168.0.116";
+	System::Diagnostics::Process::Start(websiteUrl);
 }
 };
 }

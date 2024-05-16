@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include"MyForm18.h"
 
 
 namespace Project2 {
@@ -109,7 +110,7 @@ namespace Project2 {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->label2->Location = System::Drawing::Point(148, 413);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(518, 39);
+			this->label2->Size = System::Drawing::Size(502, 38);
 			this->label2->TabIndex = 16;
 			this->label2->Text = L"Write the quantity of crop in KG";
 			// 
@@ -179,7 +180,7 @@ namespace Project2 {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->label1->Location = System::Drawing::Point(207, 31);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(459, 39);
+			this->label1->Size = System::Drawing::Size(445, 38);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Which crop you want to buy";
 			// 
@@ -241,6 +242,7 @@ namespace Project2 {
 			this->button6->TabIndex = 26;
 			this->button6->Text = L"Buy";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm15::button6_Click);
 			// 
 			// MyForm15
 			// 
@@ -272,6 +274,12 @@ namespace Project2 {
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+		MyForm18^ obj26 = gcnew MyForm18();
+		obj26->ShowDialog();
+
 }
 };
 }

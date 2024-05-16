@@ -48,6 +48,7 @@ namespace Project2 {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label3;
 
 	private:
 		/// <summary>
@@ -72,6 +73,7 @@ namespace Project2 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -166,7 +168,7 @@ namespace Project2 {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(97, 61);
+			this->label4->Location = System::Drawing::Point(97, 107);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(504, 32);
 			this->label4->TabIndex = 9;
@@ -196,6 +198,17 @@ namespace Project2 {
 			this->button6->Text = L"Sell";
 			this->button6->UseVisualStyleBackColor = false;
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(96, 37);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(550, 39);
+			this->label3->TabIndex = 12;
+			this->label3->Text = L"You sell 00.0 kg crop in this year ";
+			// 
 			// MyForm5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -203,6 +216,7 @@ namespace Project2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->ClientSize = System::Drawing::Size(744, 534);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label4);

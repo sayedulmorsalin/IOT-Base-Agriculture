@@ -162,7 +162,7 @@ namespace Project2 {
 		{
 			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
 			SqlConnection con(connectionstring);
-			String^ sqlquery = "select * from root_table where name like '%" + this->textBox1->Text + "%'";
+			String^ sqlquery = "select * from root_table where name like '%" + this->textBox1->Text + "%' and password like '%" + this->textBox2->Text + "%'";
 			SqlCommand cmd(sqlquery, % con);
 			con.Open();
 			SqlDataReader^ dr = cmd.ExecuteReader();

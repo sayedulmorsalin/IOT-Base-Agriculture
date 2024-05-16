@@ -219,9 +219,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 
 		}
-		catch (Exception^ e)
+		catch (Exception^ ex)
 		{
-			throw e;
+			throw ex;
 		}
 
 }
