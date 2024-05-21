@@ -64,9 +64,9 @@ namespace Project2 {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->label1->Location = System::Drawing::Point(212, 167);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(461, 42);
+			this->label1->Size = System::Drawing::Size(460, 42);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Humidity of your land is 8";
+			this->label1->Text = L"Moisture of your land is 8";
 			// 
 			// button1
 			// 
@@ -87,7 +87,7 @@ namespace Project2 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm9";
-			this->Text = L"MyForm9";
+			this->Text = L"Moisture";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

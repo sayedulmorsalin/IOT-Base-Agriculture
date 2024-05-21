@@ -143,7 +143,7 @@ namespace Project2 {
 			this->Controls->Add(this->label);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm12";
-			this->Text = L"MyForm12";
+			this->Text = L"Login";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

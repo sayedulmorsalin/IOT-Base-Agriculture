@@ -130,7 +130,7 @@ namespace Project2 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm14";
-			this->Text = L"MyForm14";
+			this->Text = L"Buyer dashboard";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -7,6 +7,7 @@
 #include"MyForm8.h"
 #include"MyForm9.h"
 #include"MyForm10.h"
+#include"MyForm19.h"
 
 
 
@@ -52,6 +53,7 @@ namespace Project2 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
 
 
 
@@ -80,6 +82,7 @@ namespace Project2 {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -88,7 +91,7 @@ namespace Project2 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Teal;
-			this->button1->Location = System::Drawing::Point(269, 124);
+			this->button1->Location = System::Drawing::Point(388, 124);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(441, 72);
 			this->button1->TabIndex = 0;
@@ -104,7 +107,7 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(251, 38);
+			this->label1->Location = System::Drawing::Point(370, 38);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(523, 54);
 			this->label1->TabIndex = 1;
@@ -116,11 +119,11 @@ namespace Project2 {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Teal;
-			this->button2->Location = System::Drawing::Point(269, 202);
+			this->button2->Location = System::Drawing::Point(388, 202);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(441, 72);
 			this->button2->TabIndex = 2;
-			this->button2->Text = L"Crop for sell ";
+			this->button2->Text = L"Sell crop and see details";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm4::button2_Click);
 			// 
@@ -130,7 +133,7 @@ namespace Project2 {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Teal;
-			this->button3->Location = System::Drawing::Point(269, 592);
+			this->button3->Location = System::Drawing::Point(388, 592);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(441, 72);
 			this->button3->TabIndex = 3;
@@ -144,7 +147,7 @@ namespace Project2 {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Teal;
-			this->button4->Location = System::Drawing::Point(269, 280);
+			this->button4->Location = System::Drawing::Point(388, 280);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(441, 72);
 			this->button4->TabIndex = 4;
@@ -158,7 +161,7 @@ namespace Project2 {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::Teal;
-			this->button5->Location = System::Drawing::Point(269, 358);
+			this->button5->Location = System::Drawing::Point(388, 358);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(441, 72);
 			this->button5->TabIndex = 5;
@@ -172,7 +175,7 @@ namespace Project2 {
 			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button6->ForeColor = System::Drawing::Color::Teal;
-			this->button6->Location = System::Drawing::Point(269, 436);
+			this->button6->Location = System::Drawing::Point(388, 436);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(441, 72);
 			this->button6->TabIndex = 6;
@@ -186,7 +189,7 @@ namespace Project2 {
 			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button7->ForeColor = System::Drawing::Color::Teal;
-			this->button7->Location = System::Drawing::Point(269, 514);
+			this->button7->Location = System::Drawing::Point(388, 514);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(441, 72);
 			this->button7->TabIndex = 7;
@@ -194,13 +197,28 @@ namespace Project2 {
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm4::button7_Click);
 			// 
+			// button8
+			// 
+			this->button8->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button8->ForeColor = System::Drawing::Color::Teal;
+			this->button8->Location = System::Drawing::Point(388, 670);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(441, 72);
+			this->button8->TabIndex = 8;
+			this->button8->Text = L"Help and Support";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm4::button8_Click);
+			// 
 			// MyForm4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(154)), static_cast<System::Int32>(static_cast<System::Byte>(175)),
 				static_cast<System::Int32>(static_cast<System::Byte>(181)));
-			this->ClientSize = System::Drawing::Size(1045, 733);
+			this->ClientSize = System::Drawing::Size(1282, 863);
+			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
@@ -210,7 +228,7 @@ namespace Project2 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm4";
-			this->Text = L"MyForm4";
+			this->Text = L"Dashboard";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -249,6 +267,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ websiteUrl = "http://192.168.0.116";
 	System::Diagnostics::Process::Start(websiteUrl);
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	MyForm19^ obj27 = gcnew MyForm19();
+	obj27->ShowDialog();
 }
 };
 }

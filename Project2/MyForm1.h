@@ -158,7 +158,7 @@ namespace Project2 {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(8, 7, 8, 7);
 			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Text = L"Asking for login and registration";
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

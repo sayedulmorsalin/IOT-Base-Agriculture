@@ -197,7 +197,7 @@ namespace Project2 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm7";
-			this->Text = L"MyForm7";
+			this->Text = L"Growing crop";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

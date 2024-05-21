@@ -155,7 +155,7 @@ namespace Project2 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm11";
-			this->Text = L"MyForm11";
+			this->Text = L"Asking for login or register";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

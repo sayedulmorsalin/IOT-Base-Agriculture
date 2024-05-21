@@ -89,7 +89,7 @@ namespace Project2 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm8";
-			this->Text = L"MyForm8";
+			this->Text = L"pH of land";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

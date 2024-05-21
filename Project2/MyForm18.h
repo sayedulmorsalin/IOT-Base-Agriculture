@@ -68,20 +68,20 @@ namespace Project2 {
 		void InitializeComponent(void)
 		{
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -107,6 +107,15 @@ namespace Project2 {
 			this->tableLayoutPanel1->Size = System::Drawing::Size(901, 93);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(453, 46);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(38, 16);
+			this->label6->TabIndex = 1;
+			this->label6->Text = L"Rice ";
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -117,6 +126,15 @@ namespace Project2 {
 			this->label1->Size = System::Drawing::Size(136, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Buyer Name ";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(453, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(136, 16);
+			this->label5->TabIndex = 0;
+			this->label5->Text = L"Md. Sayedul Marsalin";
 			// 
 			// label2
 			// 
@@ -170,23 +188,14 @@ namespace Project2 {
 			this->tableLayoutPanel2->Size = System::Drawing::Size(904, 93);
 			this->tableLayoutPanel2->TabIndex = 1;
 			// 
-			// label5
+			// label8
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(453, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(136, 16);
-			this->label5->TabIndex = 0;
-			this->label5->Text = L"Md. Sayedul Marsalin";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(453, 46);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(38, 16);
-			this->label6->TabIndex = 1;
-			this->label6->Text = L"Rice ";
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(455, 46);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(41, 16);
+			this->label8->TabIndex = 3;
+			this->label8->Text = L"40 TK";
 			// 
 			// label7
 			// 
@@ -196,15 +205,6 @@ namespace Project2 {
 			this->label7->Size = System::Drawing::Size(42, 16);
 			this->label7->TabIndex = 2;
 			this->label7->Text = L"10 KG";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(455, 46);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(41, 16);
-			this->label8->TabIndex = 3;
-			this->label8->Text = L"40 TK";
 			// 
 			// tableLayoutPanel3
 			// 
@@ -225,16 +225,23 @@ namespace Project2 {
 			this->tableLayoutPanel3->Size = System::Drawing::Size(904, 93);
 			this->tableLayoutPanel3->TabIndex = 2;
 			// 
-			// label9
+			// label12
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(3, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(120, 25);
-			this->label9->TabIndex = 3;
-			this->label9->Text = L"Total price ";
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(455, 46);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(71, 16);
+			this->label12->TabIndex = 2;
+			this->label12->Text = L"13/05/2024";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(455, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(48, 16);
+			this->label11->TabIndex = 3;
+			this->label11->Text = L"400 TK";
 			// 
 			// label10
 			// 
@@ -247,23 +254,16 @@ namespace Project2 {
 			this->label10->TabIndex = 2;
 			this->label10->Text = L"Date";
 			// 
-			// label11
+			// label9
 			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(455, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(48, 16);
-			this->label11->TabIndex = 3;
-			this->label11->Text = L"400 TK";
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(455, 46);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(71, 16);
-			this->label12->TabIndex = 2;
-			this->label12->Text = L"13/05/2024";
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(3, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(120, 25);
+			this->label9->TabIndex = 3;
+			this->label9->Text = L"Total price ";
 			// 
 			// label13
 			// 
@@ -287,7 +287,7 @@ namespace Project2 {
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Name = L"MyForm18";
-			this->Text = L"MyForm18";
+			this->Text = L"Receipt";
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel2->ResumeLayout(false);

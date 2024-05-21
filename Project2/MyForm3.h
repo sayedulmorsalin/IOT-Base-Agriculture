@@ -174,7 +174,7 @@ namespace Project2 {
 			this->Controls->Add(this->label1);
 			this->MinimumSize = System::Drawing::Size(700, 500);
 			this->Name = L"MyForm3";
-			this->Text = L"MyForm3";
+			this->Text = L"Register";
 			this->Load += gcnew System::EventHandler(this, &MyForm3::MyForm3_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

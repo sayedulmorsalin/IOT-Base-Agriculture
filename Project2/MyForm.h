@@ -117,7 +117,7 @@ namespace Project2 {
 			this->Controls->Add(this->label1);
 			this->MinimumSize = System::Drawing::Size(800, 600);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Welcome form";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

@@ -93,7 +93,7 @@ namespace Project2 {
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm10";
-			this->Text = L"MyForm10";
+			this->Text = L"Graph";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 
