@@ -9,5 +9,6 @@ void main(array<String^>^ args)
 	Application::EnableVisualStyles();
 	Project2::MyForm frm;
 	Application::Run(% frm);
+	
 
 }

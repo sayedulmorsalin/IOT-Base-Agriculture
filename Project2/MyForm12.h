@@ -149,41 +149,58 @@ namespace Project2 {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ id = this->textBox1->Text;
-		String^ password = this->textBox2->Text;
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ id = this->textBox1->Text;
+	String^ password = this->textBox2->Text;
 
-		if (id->Length == 0 || password->Length == 0)
+	if (id->Length == 0 || password->Length == 0)
+	{
+		MessageBox::Show("id or password is empty", "error box", MessageBoxButtons::OK);
+		return;
+	}
+	try
+	{
+		String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+		SqlConnection con(connectionstring);
+		String^ sqlquery = "select * from root_table where name like @name AND password like @password";
+		SqlCommand cmd(sqlquery, % con);
+		cmd.Parameters->AddWithValue("@name", "%" + this->textBox1->Text + "%");
+		cmd.Parameters->AddWithValue("@password", "%" + this->textBox2->Text + "%");
+		con.Open();
+		SqlDataReader^ dr = cmd.ExecuteReader();
+		if (dr->Read())
 		{
-			MessageBox::Show("id or password is empty", "error box", MessageBoxButtons::OK);
-			return;
+			int number1 = dr->IsDBNull(3) ? 0 : dr->GetInt32(3);
+			int number2 = dr->IsDBNull(4) ? 0 : dr->GetInt32(4);
+			int number3 = dr->IsDBNull(5) ? 0 : dr->GetInt32(5);
+			int number4 = dr->IsDBNull(6) ? 0 : dr->GetInt32(6);
+			int number5 = dr->IsDBNull(7) ? 0 : dr->GetInt32(7);
+			int number6 = dr->IsDBNull(8) ? 0 : dr->GetInt32(8);
+			int number7 = dr->IsDBNull(9) ? 0 : dr->GetInt32(9);
+			int number8 = dr->IsDBNull(10) ? 0 : dr->GetInt32(10);
+			int number9 = dr->IsDBNull(11) ? 0 : dr->GetInt32(11);
+			int number10 = dr->IsDBNull(12) ? 0 : dr->GetInt32(12);
+			int number11 = dr->IsDBNull(13) ? 0 : dr->GetInt32(13);
+			int number12 = dr->IsDBNull(14) ? 0 : dr->GetInt32(14);
+			int number13 = dr->IsDBNull(15) ? 0 : dr->GetInt32(15);
+			int number14 = dr->IsDBNull(16) ? 0 : dr->GetInt32(16);
+			int number15 = dr->IsDBNull(17) ? 0 : dr->GetInt32(17);
+			int number16 = dr->IsDBNull(0) ? 0 : dr->GetInt32(0);
+
+			this->Hide();
+			MyForm14^ obj22 = gcnew MyForm14(id, number1, number2, number3, number4, number5, number6, number7, number8, number9, number10, number11, number12, number13, number14, number15, number16);
+			obj22->ShowDialog();
 		}
-		try
+		else
 		{
-			String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
-			SqlConnection con(connectionstring);
-			String^ sqlquery = "select * from root_table where name like '%" + this->textBox1->Text + "%' and password like '%" + this->textBox2->Text + "%'";
-			SqlCommand cmd(sqlquery, % con);
-			con.Open();
-			SqlDataReader^ dr = cmd.ExecuteReader();
-			if (dr->Read())
-			{
-				this->Hide();
-				MyForm14^ obj24 = gcnew MyForm14();
-				obj24->ShowDialog();
-			}
-			else
-			{
-				dr->Close();
-				MessageBox::Show("you don't have account please register", "success", MessageBoxButtons::OK);
-			}
-
-		}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show("Faild to connect to database", "faild", MessageBoxButtons::OK);
-
+			dr->Close();
+			MessageBox::Show("you don't have account please register", "success", MessageBoxButtons::OK);
 		}
 	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("Failed to connect to database: " + ex->Message, "failed", MessageBoxButtons::OK);
+	}
+}
 };
 }

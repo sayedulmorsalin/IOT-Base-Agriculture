@@ -221,6 +221,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		}
 		catch (Exception^ ex)
 		{
+			MessageBox::Show("Fail to connect database", "faild", MessageBoxButtons::OK);
 			throw ex;
 		}
 

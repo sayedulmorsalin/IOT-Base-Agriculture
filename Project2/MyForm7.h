@@ -7,6 +7,7 @@ namespace Project2 {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
+	using namespace System::Data::SqlClient;
 	using namespace System::Drawing;
 
 	/// <summary>
@@ -14,6 +15,16 @@ namespace Project2 {
 	/// </summary>
 	public ref class MyForm7 : public System::Windows::Forms::Form
 	{
+	private:
+		String^ name;
+		int n11;
+		int n12;
+		int n13;
+		int n14;
+		int n15;
+		int crop=0;
+	private: System::Windows::Forms::Label^ label3;
+		  
 	public:
 		MyForm7(void)
 		{
@@ -21,6 +32,23 @@ namespace Project2 {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+	public:
+		MyForm7(String^name, int n11, int n12, int n13, int n14,int n15)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->name = name;
+			this->n11 = n11;
+			this->n12 = n12;
+			this->n13 = n13;
+			this->n14 = n14;
+			this->n15 = n15;
+			int total = n11 + n12 + n13 + n14;
+			String^ totals = "There are" + total.ToString() + " KG cultivationing crop ";
+			this->label3->Text = totals;
 		}
 
 	protected:
@@ -67,6 +95,7 @@ namespace Project2 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -74,11 +103,11 @@ namespace Project2 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(144, 69);
+			this->label1->Location = System::Drawing::Point(153, 101);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(469, 32);
+			this->label1->Size = System::Drawing::Size(475, 32);
 			this->label1->TabIndex = 9;
-			this->label1->Text = L"which crop you cultivationing now";
+			this->label1->Text = L"Which crop you cultivationing now";
 			// 
 			// button1
 			// 
@@ -93,6 +122,7 @@ namespace Project2 {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Rice";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm7::button1_Click);
 			// 
 			// button2
 			// 
@@ -107,6 +137,7 @@ namespace Project2 {
 			this->button2->TabIndex = 11;
 			this->button2->Text = L"Wheat";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm7::button2_Click);
 			// 
 			// button3
 			// 
@@ -121,6 +152,7 @@ namespace Project2 {
 			this->button3->TabIndex = 12;
 			this->button3->Text = L"Potato ";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm7::button3_Click);
 			// 
 			// button4
 			// 
@@ -135,6 +167,7 @@ namespace Project2 {
 			this->button4->TabIndex = 13;
 			this->button4->Text = L"Pepper";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm7::button4_Click);
 			// 
 			// label2
 			// 
@@ -179,6 +212,18 @@ namespace Project2 {
 			this->button6->TabIndex = 17;
 			this->button6->Text = L"Submit";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm7::button6_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(144, 26);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(538, 38);
+			this->label3->TabIndex = 18;
+			this->label3->Text = L"You are cultivatioing 00.0 Kg crop";
 			// 
 			// MyForm7
 			// 
@@ -187,6 +232,7 @@ namespace Project2 {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->ClientSize = System::Drawing::Size(849, 546);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->textBox1);
@@ -206,5 +252,63 @@ namespace Project2 {
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 1;
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 2;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 3;
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 4;
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	int num1;
+	Int32::TryParse(this->textBox1->Text, num1);
+
+	if (crop == 0)
+	{
+		MessageBox::Show("Please click on a crop to add it", "Empty Crop", MessageBoxButtons::OK);
+	}
+	else
+	{
+		int total_investment = 0;
+		String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+		String^ sqlquery = "";
+
+		switch (crop)
+		{
+		case 1:
+			total_investment = num1 + n11;
+			sqlquery = "UPDATE root_table SET gr_rice = @total_investment WHERE ID = @id";
+			break;
+		case 2:
+			total_investment = num1 + n12;
+			sqlquery = "UPDATE root_table SET gr_potato = @total_investment WHERE ID = @id";
+			break;
+		case 3:
+			total_investment = num1 + n13;
+			sqlquery = "UPDATE root_table SET gr_wheat = @total_investment WHERE ID = @id";
+			break;
+		case 4:
+			total_investment = num1 + n14;
+			sqlquery = "UPDATE root_table SET gr_papper = @total_investment WHERE ID = @id";
+			break;
+		}
+
+		SqlConnection^ con = gcnew SqlConnection(connectionstring);
+		con->Open();
+		SqlCommand^ cmd = gcnew SqlCommand(sqlquery, con);
+		cmd->Parameters->AddWithValue("@total_investment", total_investment);
+		cmd->Parameters->AddWithValue("@id", n15);
+		cmd->ExecuteNonQuery();
+		con->Close();
+
+		MessageBox::Show("Your predicted crop submitted successfully", "Success", MessageBoxButtons::OK);
+	}
+}
+
 };
 }

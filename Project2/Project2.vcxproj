@@ -145,6 +145,7 @@
     <ClCompile Include="MyForm9.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -254,6 +255,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm5.resx">
       <DependentUpon>MyForm5.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm6.resx">
       <DependentUpon>MyForm6.h</DependentUpon>

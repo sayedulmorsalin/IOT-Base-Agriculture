@@ -17,6 +17,25 @@ namespace Project2 {
 	/// </summary>
 	public ref class MyForm14 : public System::Windows::Forms::Form
 	{
+	private:
+		String^ name;
+		int n1;
+		int n2;
+		int n3;
+		int n4;
+		int n5;
+		int n6;
+		int n7;
+		int n8;
+		int n9;
+		int n10;
+		int n11;
+		int n12;
+		int n13;
+		int n14;
+		int n15;
+		int n16;
+
 	public:
 		MyForm14(void)
 		{
@@ -25,7 +44,34 @@ namespace Project2 {
 			//TODO: Add the constructor code here
 			//
 		}
+	public:
+		MyForm14(String^ id, int n1, int n2, int n3, int n4, int n5, int n6, int n7, int n8, int n9, int n10, int n11, int n12, int n13, int n14, int n15, int n16)
+		{
 
+
+			InitializeComponent();
+
+			//
+			//TODO: Add the constructor code here
+			//
+			this->name = id;
+			this->n1 = n1;
+			this->n2 = n2;
+			this->n3 = n3;
+			this->n4 = n4;
+			this->n5 = n5;
+			this->n6 = n6;
+			this->n7 = n7;
+			this->n8 = n8;
+			this->n9 = n9;
+			this->n10 = n10;
+			this->n11 = n11;
+			this->n12 = n12;
+			this->n13 = n13;
+			this->n14 = n14;
+			this->n15 = n15;
+			this->n16 = n16;
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -137,15 +183,15 @@ namespace Project2 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm15^ obj19 = gcnew MyForm15();
+		MyForm15^ obj19 = gcnew MyForm15(name, n1, n2, n3, n4, n5, n6, n15, n16);
 		obj19->ShowDialog();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm16^ obj20 = gcnew MyForm16();
+		MyForm16^ obj20 = gcnew MyForm16(n7,n8,n9,n10);
 		obj20->ShowDialog();
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm17^ obj21 = gcnew MyForm17();
+		MyForm17^ obj21 = gcnew MyForm17(n11,n12,n13,n14);
 		obj21->ShowDialog();
 	}
 };

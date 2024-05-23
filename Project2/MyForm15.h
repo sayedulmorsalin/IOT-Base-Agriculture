@@ -9,6 +9,7 @@ namespace Project2 {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
+	using namespace System::Data::SqlClient;
 	using namespace System::Drawing;
 
 	/// <summary>
@@ -16,13 +17,48 @@ namespace Project2 {
 	/// </summary>
 	public ref class MyForm15 : public System::Windows::Forms::Form
 	{
+	private:
+		String^ name;
+		int n1;
+		int n2;
+		int n3;
+		int n4;
+		int n5;
+		int n6;
+		int n7;
+		int n8;
+		int crop = 0;
 	public:
 		MyForm15(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+		}
+
+		MyForm15(String^ id, int n1, int n2, int n3, int n4, int n5, int n6, int n7, int n8)
+		{
+			InitializeComponent();
+			this->name = id;
+			this->n1 = n1;
+			this->n2 = n2;
+			this->n3 = n3;
+			this->n4 = n4;
+			this->n5 = n5;
+			this->n6 = n6;
+			this->n7 = n7;
+			this->n8 = n8;
+
+			String^ totalsell = n3.ToString() + " KG available";
+			this->label4->Text = totalsell;
+
+			String^ totalsell1 = n4.ToString() + " KG available";
+			this->label3->Text = totalsell1;
+
+			String^ totalsell2 = n5.ToString() + " KG available";
+			this->label5->Text = totalsell2;
+
+			String^ totalsell3 = n6.ToString() + " KG available";
+			this->label6->Text = totalsell3;
+
 		}
 
 	protected:
@@ -142,6 +178,7 @@ namespace Project2 {
 			this->button3->TabIndex = 14;
 			this->button3->Text = L"Potato ";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm15::button3_Click);
 			// 
 			// button2
 			// 
@@ -156,6 +193,7 @@ namespace Project2 {
 			this->button2->TabIndex = 13;
 			this->button2->Text = L"Wheat";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm15::button2_Click);
 			// 
 			// button1
 			// 
@@ -170,6 +208,7 @@ namespace Project2 {
 			this->button1->TabIndex = 12;
 			this->button1->Text = L"Rice";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm15::button1_Click);
 			// 
 			// label1
 			// 
@@ -271,15 +310,107 @@ namespace Project2 {
 		}
 #pragma endregion
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+		crop = 4;
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-		MyForm18^ obj26 = gcnew MyForm18();
-		obj26->ShowDialog();
+	int num1;
+	if (!Int32::TryParse(this->textBox1->Text, num1)) {
+		MessageBox::Show("Please enter a valid quantity", "Invalid Input", MessageBoxButtons::OK);
+		return;
+	}
 
+	if (crop == 0) {
+		MessageBox::Show("Please click on a crop to add it", "Empty Crop", MessageBoxButtons::OK);
+		return;
+	}
+
+	int total_investment = 0;
+	String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+	String^ sqlquery = "";
+	bool isValid = true;
+
+	switch (crop) {
+	case 1:
+		total_investment = n3 - num1;
+		if (total_investment >= 0) {
+			n7 = n7 + num1;
+			sqlquery = "UPDATE root_table SET store_rice = @total_investment, total_sell = @n7 WHERE ID = @id";
+		}
+		else {
+			isValid = false;
+		}
+		break;
+	case 2:
+		total_investment = n4 - num1;
+		if (total_investment >= 0) {
+			n7 = n7 + num1;
+			sqlquery = "UPDATE root_table SET store_potato = @total_investment, total_sell = @n7 WHERE ID = @id";
+		}
+		else {
+			isValid = false;
+		}
+		break;
+	case 3:
+		total_investment = n5 - num1;
+		if (total_investment >= 0) {
+			n7 = n7 + num1;
+			sqlquery = "UPDATE root_table SET store_wheat = @total_investment, total_sell = @n7 WHERE ID = @id";
+		}
+		else {
+			isValid = false;
+		}
+		break;
+	case 4:
+		total_investment = n6 - num1;
+		if (total_investment >= 0) {
+			n7 = n7 + num1;
+			sqlquery = "UPDATE root_table SET store_papper = @total_investment, total_sell = @n7 WHERE ID = @id";
+		}
+		else {
+			isValid = false;
+		}
+		break;
+	}
+
+	if (!isValid) {
+		MessageBox::Show("Invalid amount", "Buy Failed", MessageBoxButtons::OK);
+		return;
+	}
+
+	try {
+		SqlConnection^ con = gcnew SqlConnection(connectionstring);
+		con->Open();
+		SqlCommand^ cmd = gcnew SqlCommand(sqlquery, con);
+		cmd->Parameters->AddWithValue("@total_investment", total_investment);
+		cmd->Parameters->AddWithValue("@id", n8.ToString());
+		cmd->Parameters->AddWithValue("@n7", n7);
+		cmd->ExecuteNonQuery();
+		con->Close();
+
+		MessageBox::Show("Your order is done successfully", "Success", MessageBoxButtons::OK);
+
+		this->Hide();
+		MyForm18^ obj26 = gcnew MyForm18(name, crop, num1);
+		obj26->ShowDialog();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show("An error occurred: " + ex->Message, "Error", MessageBoxButtons::OK);
+	}
+}
+
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 1;
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 2;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 3;
 }
 };
 }

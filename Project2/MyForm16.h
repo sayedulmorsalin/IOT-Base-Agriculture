@@ -14,6 +14,11 @@ namespace Project2 {
 	/// </summary>
 	public ref class MyForm16 : public System::Windows::Forms::Form
 	{
+	private:
+		int n7;
+		int n8;
+		int n9;
+		int n10;
 	public:
 		MyForm16(void)
 		{
@@ -21,6 +26,28 @@ namespace Project2 {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+	public:
+		MyForm16(int n7, int n8, int n9, int n10)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+
+			this->n7 = n7;
+			this->n8 = n8;
+			this->n9 = n9;
+			this->n10 = n10;
+
+			String^ totals = n7.ToString() + " KG comming soon ";
+			this->label4->Text = totals;
+			String^ totals1 = n8.ToString() + " KG comming soon ";
+			this->label3->Text = totals1;
+			String^ totals2 = n9.ToString() + " KG comming soon ";
+			this->label5->Text = totals2;
+			String^ totals3 = n10.ToString() + " KG comming soon ";
+			this->label6->Text = totals3;
 		}
 
 	protected:

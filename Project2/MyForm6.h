@@ -8,12 +8,21 @@ namespace Project2 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MyForm6
 	/// </summary>
 	public ref class MyForm6 : public System::Windows::Forms::Form
 	{
+	private:
+		String^ name;
+		int n7;
+		int n8;
+		int n9;
+		int n10;
+		int n11;
+		int crop = 0;
 	public:
 		MyForm6(void)
 		{
@@ -21,6 +30,24 @@ namespace Project2 {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+	public:
+		MyForm6(String^ name, int n7, int n8, int n9, int n10,int n11)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->name = name;
+			this->n7 = n7;
+			this->n8 = n8;
+			this->n9 = n9;
+			this->n10 = n10;
+			this->n11 = n11;
+
+			int total = n7 + n8 + n9 + n10;
+			String^ totals = "There are" + total.ToString() + " KG upcoming crop ";
+			this->label3->Text = totals;
 		}
 
 	protected:
@@ -106,6 +133,7 @@ namespace Project2 {
 			this->button4->TabIndex = 13;
 			this->button4->Text = L"Pepper";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm6::button4_Click);
 			// 
 			// button3
 			// 
@@ -120,6 +148,7 @@ namespace Project2 {
 			this->button3->TabIndex = 12;
 			this->button3->Text = L"Potato ";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm6::button3_Click);
 			// 
 			// button2
 			// 
@@ -134,6 +163,7 @@ namespace Project2 {
 			this->button2->TabIndex = 11;
 			this->button2->Text = L"Wheat";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm6::button2_Click);
 			// 
 			// button1
 			// 
@@ -148,6 +178,7 @@ namespace Project2 {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Rice";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm6::button1_Click);
 			// 
 			// label1
 			// 
@@ -194,6 +225,7 @@ namespace Project2 {
 			this->button6->TabIndex = 18;
 			this->button6->Text = L"Submit";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm6::button6_Click);
 			// 
 			// MyForm6
 			// 
@@ -222,5 +254,63 @@ namespace Project2 {
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 }
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 1;
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 2;
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 3;
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	crop = 4;
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	int num1;
+	Int32::TryParse(this->textBox1->Text, num1);
+
+	if (crop == 0)
+	{
+		MessageBox::Show("Please click on a crop to add it", "Empty Crop", MessageBoxButtons::OK);
+	}
+	else
+	{
+		int total_investment = 0;
+		String^ connectionstring = "Data Source=localhost\\sqlexpress;Initial Catalog=root_info;Integrated Security=True;";
+		String^ sqlquery = "";
+
+		switch (crop)
+		{
+		case 1:
+			total_investment = num1 + n7;
+			sqlquery = "UPDATE root_table SET up_potato = @total_investment WHERE ID = @id";
+			break;
+		case 2:
+			total_investment = num1 + n8;
+			sqlquery = "UPDATE root_table SET up_rice = @total_investment WHERE ID = @id";
+			break;
+		case 3:
+			total_investment = num1 + n9;
+			sqlquery = "UPDATE root_table SET up_wheat = @total_investment WHERE ID = @id";
+			break;
+		case 4:
+			total_investment = num1 + n10;
+			sqlquery = "UPDATE root_table SET up_papper = @total_investment WHERE ID = @id";
+			break;
+		}
+
+		SqlConnection^ con = gcnew SqlConnection(connectionstring);
+		con->Open();
+		SqlCommand^ cmd = gcnew SqlCommand(sqlquery, con);
+		cmd->Parameters->AddWithValue("@total_investment", total_investment);
+		cmd->Parameters->AddWithValue("@id", n11);
+		cmd->ExecuteNonQuery();
+		con->Close();
+
+		MessageBox::Show("Your predicted crop submitted successfully", "Success", MessageBoxButtons::OK);
+	}
+}
+
 };
 }
