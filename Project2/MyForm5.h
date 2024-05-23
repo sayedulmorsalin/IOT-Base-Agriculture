@@ -270,7 +270,7 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ details = "You Have " + n3.ToString() + " KG rice in your store"+ "You Have " + n4.ToString() + " KG Potato in your store"+ "You Have " + n5.ToString() + " KG Wheat in your store"+ "You Have " + n6.ToString() + " KG Pepper in your store";
+		String^ details = "You Have " + n3.ToString() + " KG rice in your store  ,"+ "You Have " + n4.ToString() + " KG Potato in your store ,"+ "You Have " + n5.ToString() + " KG Wheat in your store,"+ "You Have " + n6.ToString() + " KG Pepper in your store  ";
 		MessageBox::Show(details, "details");
 	}
 };

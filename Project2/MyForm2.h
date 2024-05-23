@@ -188,10 +188,12 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			int number13 = dr->IsDBNull(15) ? 0 : dr->GetInt32(15);
 			int number14 = dr->IsDBNull(16) ? 0 : dr->GetInt32(16);
 			int number15 = dr->IsDBNull(17) ? 0 : dr->GetInt32(17);
+			int number17 = dr->IsDBNull(18) ? 0 : dr->GetInt32(18);
+			int number18 = dr->IsDBNull(19) ? 0 : dr->GetInt32(19);
 			int number16 = dr->IsDBNull(0) ? 0 : dr->GetInt32(0);
 
 			this->Hide();
-			MyForm4^ obj22 = gcnew MyForm4(id, number1, number2, number3, number4, number5, number6, number7, number8, number9, number10, number11, number12, number13, number14, number15, number16);
+			MyForm4^ obj22 = gcnew MyForm4(id, number1, number2, number3, number4, number5, number6, number7, number8, number9, number10, number11, number12, number13, number14, number15, number16,number17,number18);
 			obj22->ShowDialog();
 		}
 		else

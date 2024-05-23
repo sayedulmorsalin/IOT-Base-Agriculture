@@ -43,6 +43,8 @@ namespace Project2 {
 		int n13;
 		int n14;
 		int n15;
+		int n17;
+		int n18;
 	private: System::Windows::Forms::Button^ button7;
 		   int n16;
 
@@ -55,7 +57,7 @@ namespace Project2 {
 			//
 		}
 	public:
-		MyForm4(String^ id,int n1,int n2,int n3,int n4,int n5,int n6,int n7,int n8,int n9,int n10,int n11,int n12,int n13,int n14,int n15,int n16)
+		MyForm4(String^ id,int n1,int n2,int n3,int n4,int n5,int n6,int n7,int n8,int n9,int n10,int n11,int n12,int n13,int n14,int n15,int n16,int n17,int n18)
 		{
 
 
@@ -81,6 +83,8 @@ namespace Project2 {
 			this->n14 = n14;
 			this->n15 = n15;
 			this->n16 = n16;
+			this->n17 = n17;
+			this->n18 = n18;
 		}
 
 	protected:
@@ -302,7 +306,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	//this->Hide();
-	MyForm8^ obj10 = gcnew MyForm8();
+	MyForm8^ obj10 = gcnew MyForm8(n17);
 	obj10->ShowDialog();
 }
 
@@ -320,7 +324,7 @@ private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^
 	obj28->ShowDialog();
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	MyForm10^ obj29 = gcnew MyForm10();
+	MyForm10^ obj29 = gcnew MyForm10(n18);
 	obj29->ShowDialog();
 
 }

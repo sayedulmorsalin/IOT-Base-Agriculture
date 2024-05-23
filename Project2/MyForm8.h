@@ -14,6 +14,8 @@ namespace Project2 {
 	/// </summary>
 	public ref class MyForm8 : public System::Windows::Forms::Form
 	{
+	private:
+		int n1;
 	public:
 		MyForm8(void)
 		{
@@ -21,6 +23,27 @@ namespace Project2 {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+	public:
+		MyForm8(int n1)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+			this->n1 = n1;
+			if (n1 > 5 && n1 < 8)
+			{
+				this->label1->Text = "Your land is alright";
+			}
+			else if (n1 > 0 && n1 < 5)
+			{
+				this->label1->Text = "You should use alkali fertilizer";
+			}
+			else if (n1 > 8 && n1 < 14)
+			{
+				this->label1->Text = "You should use acidic fertilizer";
+			}
 		}
 
 	protected:
@@ -65,9 +88,9 @@ namespace Project2 {
 			this->label1->ForeColor = System::Drawing::Color::Navy;
 			this->label1->Location = System::Drawing::Point(257, 211);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(416, 42);
+			this->label1->Size = System::Drawing::Size(346, 42);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"The pH of the land is 7";
+			this->label1->Text = L"Your land is alright";
 			// 
 			// button1
 			// 
